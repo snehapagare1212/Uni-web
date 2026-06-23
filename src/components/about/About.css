@@ -1,0 +1,52 @@
+.about 
+{
+margin: 100px auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+
+.aboutL
+{
+    flex-basis: 40%;
+    position: relative;
+
+}
+.aboutR
+{
+    flex-basis: 56%;
+}
+.fimage 
+{
+    width: 100%;
+    border-radius: 10px;
+}
+.simage{
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.aboutR h3 
+{
+
+font-size: 56px;
+font-weight: 600px;
+margin-bottom: 10px;
+
+}
+
+.aboutR h2
+{
+
+font-size: 32px;
+
+
+}
+
+.aboutR p{
+
+    font-size: 20px;
+}

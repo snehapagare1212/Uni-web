@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero'
 import Program from './components/Programs/Program'
 import Gallery from './components/gallery/Gallery'
 import Title from './components/title/Title'
+import About from './components/about/About'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,10 +14,15 @@ function App() {
     <Navbar/>
     <Hero/>
     <div className='container'>
-      <Title/>
+      <Title subtitle="We Provide master courses" title="Our product"/>
 <Program/>
+ 
+
+<About/>
+<Title subtitle="Our Campus" title="Gallery"/>
     </div>
     <Gallery/>
+
     
         
     </>
