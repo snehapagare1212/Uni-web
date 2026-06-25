@@ -22,6 +22,7 @@ justify-content: space-between;
     width: 100%;
     border-radius: 10px;
 }
+
 .simage{
     width: 60px;
     position: absolute;
@@ -29,6 +30,7 @@ justify-content: space-between;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .aboutR h3 
 {
 
