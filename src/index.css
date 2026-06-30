@@ -7,11 +7,13 @@
     margin-top: 0;
     box-sizing: border-box;
      font-family: "Outfit", sans-serif;
+    
 }
 
 .container {
     padding-left: 10%;
     padding-right: 10%;
+    
 }
 
 .btn

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './Testimony.css'
 import fb from '../../assets/backicon.png'
 import nb from '../../assets/nexticon.png'
@@ -8,79 +8,117 @@ import u3 from '../../assets/user3.png'
 import u4 from '../../assets/user4.png'
 
 
+
 const Testimony = () => {
+
+    const slide =useRef();
+    let tx=0;
+    const fbt =()=>
+    {
+        if (tx> -50)
+        {
+            tx-=25;
+            slide.current.style.transform=`translateX(${tx}%)`
+        }
+    };
+
+    const nbt =()=>
+    {
+        if (tx <0)
+        {
+            tx+=25;
+            slide.current.style.transform=`translateX(${tx}%)`
+        }
+    };
+
+
+
+
+
+
+
     return (
-        <div className='testiomny'>
-            <img src={fb} alt="" />
-            <img src={nb} alt="" />
+        <div>
+        <div className='testimony'>
+            <img src={fb} alt="" className='fb' onClick={nbt}/>
+            <img src={nb} alt="" className='nb' onClick={fbt}/>
             <div className="slider">
-               
 
-                <ul>
-                    <li>
-                        <div className="slide">
-                             <img src={u1} alt="" />
-                            <div className="userinfo">
-                               <h3>Harry Potter</h3>
-                                    <span>Hogwarts, Scotland </span>
-                            </div>
-                        </div>
-                         <p>
-                                "Joining this university has been one of the best decisions of my life.
-                             The supportive faculty, modern facilities, and practical learning environment have helped me grow both academically and personally."
+                <ul ref={slide}>
+                   <li>
+    <div className="slide">
+        <div className="userinfo">
+            <img src={u1} alt="" />
+            <div>
+                <h3>Harry Potter</h3>
+                <span>Hogwarts, Scotland</span>
+            </div>
+        </div>
 
-                            </p>
-                    </li>
+        <p>
+            "Joining this university has been one of the best decisions of my life.
+            The supportive faculty, modern facilities, and practical learning environment
+            have helped me grow both academically and personally."
+        </p>
+    </div>
+</li>
 
-                     <li>
-                        <div className="slide">
-                             <img src={u2} alt="" />
-                            <div className="userinfo">
-                               <h3>Harry Potter</h3>
-                                    <span>Hogwarts, Scotland </span>
-                            </div>
-                        </div>
-                         <p>
-                                "Joining this university has been one of the best decisions of my life.
-                             The supportive faculty, modern facilities, and practical learning environment have helped me grow both academically and personally."
+                   <li>
+    <div className="slide">
+        <div className="userinfo">
+            <img src={u2} alt="" />
+            <div>
+                <h3>Harry Potter</h3>
+                <span>Hogwarts, Scotland</span>
+            </div>
+        </div>
 
-                            </p>
-                    </li>
+        <p>
+            "Joining this university has been one of the best decisions of my life.
+            The supportive faculty, modern facilities, and practical learning environment
+            have helped me grow both academically and personally."
+        </p>
+    </div>
+</li>
+<li>
+    <div className="slide">
+        <div className="userinfo">
+            <img src={u3} alt="" />
+            <div>
+                <h3>Harry Potter</h3>
+                <span>Hogwarts, Scotland</span>
+            </div>
+        </div>
 
+        <p>
+            "Joining this university has been one of the best decisions of my life.
+            The supportive faculty, modern facilities, and practical learning environment
+            have helped me grow both academically and personally."
+        </p>
+    </div>
+</li>
 
-                     <li>
-                        <div className="slide">
-                             <img src={u3} alt="" />
-                            <div className="userinfo">
-                               <h3>Harry Potter</h3>
-                                    <span>Hogwarts, Scotland </span>
-                            </div>
-                        </div>
-                         <p>
-                                "Joining this university has been one of the best decisions of my life.
-                             The supportive faculty, modern facilities, and practical learning environment have helped me grow both academically and personally."
+                  <li>
+    <div className="slide">
+        <div className="userinfo">
+            <img src={u4} alt="" />
+            <div>
+                <h3>Harry Potter</h3>
+                <span>Hogwarts, Scotland</span>
+            </div>
+        </div>
 
-                            </p>
-                    </li>
-
-                     <li>
-                        <div className="slide">
-                             <img src={u4} alt="" />
-                            <div className="userinfo">
-                               <h3>Harry Potter</h3>
-                                    <span>Hogwarts, Scotland </span>
-                            </div>
-                        </div>
-                         <p>
-                                "Joining this university has been one of the best decisions of my life.
-                             The supportive faculty, modern facilities, and practical learning environment have helped me grow both academically and personally."
-
-                            </p>
-                    </li>
+        <p>
+            "Joining this university has been one of the best decisions of my life.
+            The supportive faculty, modern facilities, and practical learning environment
+            have helped me grow both academically and personally."
+        </p>
+    </div>
+</li>
                 </ul>
             </div>
 
-
+        </div>
         </div>
     )
 }
