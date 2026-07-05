@@ -6,27 +6,27 @@ import Gallery from './components/gallery/Gallery'
 import Title from './components/title/Title'
 import About from './components/about/About'
 import Testimony from './components/testimony/Testimony'
+import Contact from './components/contact/Contact'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <div className='container'>
-      <Title subtitle="We Provide master courses" title="Our product"/>
-<Program/>
- 
+      <Navbar />
+      <Hero />
+      <div className='container'>
+        <Title subtitle="We Provide master courses" title="Our product" />
+        <Program />
+        <About />
+        <Title subtitle="Our Campus" title="Gallery" />
+        <Gallery />
+        <Title subtitle="What our student says about us?" title="Testimony" />
+        <Testimony />
+        <Title subtitle="Get in touch with us!" title="Contact" />
+        <Contact />
+      </div>
 
-<About/>
-<Title subtitle="Our Campus" title="Gallery"/>
-    </div>
-    <Gallery/>
-    <Title subtitle="What our student says about us?" title="Testimony"/>
-<Testimony/>
-    
-        
     </>
   )
 }
