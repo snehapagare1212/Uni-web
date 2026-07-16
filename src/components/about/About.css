@@ -17,19 +17,13 @@ justify-content: space-between;
 {
     flex-basis: 56%;
 }
-.fimage 
+.vid
 {
     width: 100%;
     border-radius: 10px;
 }
 
-.simage{
-    width: 60px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 
 .aboutR h3 
 {

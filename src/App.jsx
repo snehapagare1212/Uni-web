@@ -7,6 +7,7 @@ import Title from './components/title/Title'
 import About from './components/about/About'
 import Testimony from './components/testimony/Testimony'
 import Contact from './components/contact/Contact'
+import Footer from './components/footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
         <Testimony />
         <Title subtitle="Get in touch with us!" title="Contact" />
         <Contact />
+        <Footer/>
       </div>
 
     </>

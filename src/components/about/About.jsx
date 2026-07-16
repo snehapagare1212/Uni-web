@@ -2,14 +2,20 @@ import React from 'react'
 import './About.css'
 import about from '../../assets/about.png'
 import icon from '../../assets/playicon.png'
+import v from '../../assets/v.mp4'
 
 const About = () => {
   return (
     <div className='about'>
 <div className='aboutL'>
-        <img src={about} className='fimage'/>
-
-        <img src={icon} className='simage'/>
+        <video
+        className='vid'
+        src={v}
+        autoPlay
+        muted
+        controls
+        
+        />
       
     </div>
  <div className="aboutR">
