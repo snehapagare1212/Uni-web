@@ -7,6 +7,7 @@ import loc from '../../assets/locationicon.png'
 
 const Contact = () => {
   return (
+    
     <div className='contact'>
 
       <div className="contactcol">
