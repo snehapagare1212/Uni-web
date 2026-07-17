@@ -69,7 +69,7 @@ border: 0;
 margin-bottom: 15px;
 margin-top: 5px;
 resize: none;
-background-color: rgb(225, 206, 179);
+background-color: rgb(234, 231, 228);
 
 
 
@@ -78,6 +78,7 @@ background-color: rgb(225, 206, 179);
 .txt
 {
     padding: 10px;
-    background-color: rgb(225, 206, 179);
+    background-color: rgb(234, 231, 228);
     border-radius:10px;
+   
 }

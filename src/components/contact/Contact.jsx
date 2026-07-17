@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import './Contact.css'
 import msg from '../../assets/msgicon.png'
 import mail from '../../assets/mailicon.png'
@@ -6,6 +6,29 @@ import ph from '../../assets/phoneicon.png'
 import loc from '../../assets/locationicon.png'
 
 const Contact = () => {
+   const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    formData.append("access_key", "cc3c114d-3779-4847-9e4e-b7e07bb450ed");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult("Error");
+    }
+  };
+
+
   return (
     
     <div className='contact'>
@@ -30,7 +53,7 @@ const Contact = () => {
 
       <div className='contactcol'>
 
-        <form action=''>
+        <form onSubmit={onSubmit}>
 
           <label>Name</label>
           <input type='text' name='name' placeholder='Enter your name' required/>
@@ -39,17 +62,14 @@ const Contact = () => {
           <input type='tel' name='phone' placeholder='Enter your contact' required/>
 
           <label>Email</label>
-          <input type='email' name='email' placeholder='Enter your email' required/>\
-
-
-        </form>
-
-        <textarea type='text'className='txt' name='text'rows='6' cols='100' placeholder='Ask your queries?'/>
+          <input type='email' name='email' placeholder='Enter your email' required/>
+ <textarea className='txt' name='text' rows='6' cols='100' placeholder='Ask your queries?'/>
 
           <button type='submit'className='btn'>Submit</button>
-
+        </form>
+ <span>{result}</span>
       </div>
-     
+    
     </div>
   )
 }
