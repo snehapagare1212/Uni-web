@@ -1,4 +1,5 @@
-.programs{
+
+ .programs{
 margin: 80px auto;
 width: 90%;
 display: flex;
@@ -55,57 +56,4 @@ margin-bottom: 10px;
     
 }
 
-
-
-
-
-
-
-.program img
-{
- width: 100%;
- border-radius: 10px;
-
-
-}
-
-.program
-{
-    flex-basis: 31%;
-    position: relative;
-}
-
-.caption 
-{ border-radius: 10px;
-    margin: 0 15px;
-    width: 100%;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    background-color: rgba(67, 70, 93, 0.3);
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    cursor: pointer;
-border-radius: 10px;
-opacity: 0;
-padding-top: 70px;
-transition: 0.4s;
-}
-
-.caption img 
-{
-width: 80px;
-margin-bottom: 15px;
-
-}
-.program:hover .caption 
-{
-    opacity: 1;
-    padding-top: 0;
-}
 
