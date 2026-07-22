@@ -19,7 +19,7 @@
 .btn
 {
 border-radius: 30px;
-background-color: rgb(238, 187, 158);
+background-color: rgb(207, 201, 197);
 color: rgb(11, 11, 11);
 padding:  14px 25px;
 font-size: 16px;
@@ -29,6 +29,7 @@ display: inline-flex;
 align-items: center;
 justify-self: center;
 margin-top: 10px;
+
 
 }
 
