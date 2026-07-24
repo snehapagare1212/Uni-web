@@ -65,7 +65,7 @@ const Contact = () => {
           <input type='email' name='email' placeholder='Enter your email' required/>
  <textarea className='txt' name='text' rows='6' cols='100' placeholder='Ask your queries?'/>
 
-          <button type='submit'className='btn'>Submit</button>
+          <button type='submit'className='btnn'>Submit</button>
         </form>
  <span>{result}</span>
       </div>
