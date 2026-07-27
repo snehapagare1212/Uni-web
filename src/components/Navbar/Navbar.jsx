@@ -28,7 +28,7 @@ const Navbar = () => {
         <li><Link to='gallery' smooth='true' offset={-290} duration={500}>Gallery</Link></li>
         <li><Link to='testimony' smooth='true' offset={-290} duration={500}>Testimony</Link></li>
         <li><Link to='contact' smooth='true' offset={-250} duration={500}>Contact</Link></li>
-        <li><Link><button className='btn'>SignUp /Login</button></Link></li>
+        <li><a href='././signup.html'><button className='btn'>SignUp /Login</button></a></li>
 
 
       </ul>
