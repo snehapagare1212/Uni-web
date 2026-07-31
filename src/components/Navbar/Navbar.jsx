@@ -28,11 +28,11 @@ const Navbar = () => {
         <li><Link to='gallery' smooth='true' offset={-290} duration={500}>Gallery</Link></li>
         <li><Link to='testimony' smooth='true' offset={-290} duration={500}>Testimony</Link></li>
         <li><Link to='contact' smooth='true' offset={-250} duration={500}>Contact</Link></li>
-     
 
- { <li><a href="/Uni-web/signup.html">
-  <button className="btn">Sign Up / Login</button>
-</a></li> }
+
+        {<li><a href="/Uni-web/signup.html">
+          <button className="btn">Sign Up / Login</button>
+        </a></li>}
 
 
 
