@@ -2,7 +2,7 @@
 
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(7, 7, 7, 0.7), rgba(134, 112, 112, 0.7)), url('../../assets/hero.png');
+    background-image:  linear-gradient(rgba(7, 7, 7, 0.7), rgba(27, 29, 28, 0.7)), url('../../assets/hero.png');
     color: white;
     background-size: cover;
     background-position: center;
