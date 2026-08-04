@@ -75,7 +75,7 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
 
     console.log(data);
 
-    fetch("http://localhost:3000/register", {
+    fetch("https://your-backend.onrender.com/register",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
