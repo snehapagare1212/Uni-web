@@ -25,7 +25,7 @@ db.connect((err) => {
     console.log("MySQL Connected");
 });
 
-// Register API
+
 app.post("/register", async (req, res) => {
     const { name, email, password } = req.body;
 
