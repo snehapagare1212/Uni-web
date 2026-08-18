@@ -52,7 +52,7 @@
 <script>
 console.log("script loaded");
 
-document.getElementById("registerForm").addEventListener("submit", function(e) {
+document.getElementById("registerForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
     console.log("button clicked");
@@ -65,25 +65,34 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
 
     console.log(data);
 
-    fetch("http://localhost:3000/register", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.text())
-    .then(result => {
+    try {
+        const response = await fetch("http://localhost:3000/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
         console.log(result);
-        alert(result);
-    })
-    .catch(error => {
-        console.log(error);
-        alert("Server error");
-    });
+
+        if (result.success) {
+            alert("✅ Registration successful!");
+
+            // Go to Login page
+            window.location.href = "Login.html";
+        } else {
+            alert("❌ " + result.message);
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("❌ Server error. Please try again.");
+    }
 });
 </script>
-
 
 
 </body>
