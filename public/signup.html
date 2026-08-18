@@ -1,64 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="signup.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="Login.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"/>
 </head>
 
-<body>
+<body style="background-image: url('./sign.jpg');">
+    
 
+        <div class='login'>
+             <H2>Signup </H2>
+            <form id="registerForm">
 
-    <div class='signup'>
-        <h2>Registration form </h2>
-        <form id="registerForm">
+                 <div class="form-group">
+                    <input type='text' id="name" required>
+                    <i class="fa-solid fa-user"></i>
+                    <label for="">Name</label>
 
-            <div class="form-group">
-                <input type='text'  id="name" required>
-                <i class="fa-solid fa-user"></i>
-                <label for="">Name</label>
+                </div>
+               
+                <div class="form-group">
+                    <input type='email' id="email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                    <label for="">Email</label>
 
+                </div>
 
+                <div class="form-group">
 
+                   
+                       <input type='password' id="password" required>
+                    <label for="">Password</label>
+                     <i class="fa-solid fa-key"></i>
 
-            </div>
+                </div>
+          
+                <button type='submit' value="submit" class='btn'>Submit</button>
+                <p style="text-align:center;  margin-top: 10px; font-size: 15px; ">Already have an account ? <a href="Login.html" style="text-decoration: none; font-weight: 500; color: blue;"> Login</a> </p>
+                
 
-            <div class="form-group">
-                <input type='mail' id="email"  required>
-                <i class="fa-solid fa-envelope"></i>
-                <label for="">Email</label>
-
-
-
-
-            </div>
-
-            <div class="form-group">
-
-
-                <input type='password' id="password" required>
-                <label for="">Password</label>
-                <i class="fa-solid fa-key"></i>
-
-
-
-            </div>
-            <button type='submit'value="submit" class='btn'>Submit</button>
-
-            <p style="text-align:center;  margin-top: 10px; font-size: 15px; ">Already have an account ? <a
-                    href="log.html" style="text-decoration: none; font-weight: 500; color: blue;"> Login</a> </p>
-
-
-        </form>
+            </form>
 
 
 
 
 
-    </div>
+        </div>
 <script>
 console.log("script loaded");
 
@@ -75,7 +65,7 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
 
     console.log(data);
 
-    fetch("https://your-backend.onrender.com/register",{
+    fetch("http://localhost:3000/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -96,7 +86,5 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
 
 
 
-
 </body>
-
 </html>

@@ -1,48 +1,113 @@
-import React, { use, useEffect, useState } from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo.png'
+import React, { useEffect, useState } from 'react';
+import './Navbar.css';
+import logo from '../../assets/logo.png';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
-  const [bg, setbg] = useState(false);
+  const [bg, setBg] = useState(false);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      window.scrollY > 500 ? setbg(true) : setbg(false);
+    const handleScroll = () => {
+      setBg(window.scrollY > 500);
+    };
 
-    })
+    window.addEventListener("scroll", handleScroll);
 
+    // Check if user is logged in
+    const name = localStorage.getItem("username");
+    if (name) {
+      setUsername(name);
+    }
 
-
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+
+    setUsername("");
+
+    alert("Logged out successfully!");
+
+    window.location.href = "/Uni-web/Login.html";
+  };
+
   return (
+    <nav className={`container ${bg ? "darknav" : ""}`}>
+      <img src={logo} alt="Logo" className="logo" />
 
-
-    <nav className={`container ${bg ? 'darknav' : ''}`}>
-      <img src={logo} alt="" className='logo' />
       <ul>
-        <li><Link to='hero' smooth='true' offset={0} duration={500}>Home</Link></li>
-        <li><Link to='programs' smooth='true' offset={-280} duration={500}>Programs</Link></li>
-        <li><Link to='about' smooth='true' offset={-160} duration={500}>About</Link></li>
-        <li><Link to='gallery' smooth='true' offset={-290} duration={500}>Gallery</Link></li>
-        <li><Link to='testimony' smooth='true' offset={-290} duration={500}>Testimony</Link></li>
-        <li><Link to='contact' smooth='true' offset={-250} duration={500}>Contact</Link></li>
+        <li>
+          <Link to="hero" smooth={true} offset={0} duration={500}>
+            Home
+          </Link>
+        </li>
 
+        <li>
+          <Link to="programs" smooth={true} offset={-280} duration={500}>
+            Programs
+          </Link>
+        </li>
 
-        {<li><a href="/Uni-web/signup.html">
-          <button className="btn">Sign Up / Login</button>
-        </a></li>}
+        <li>
+          <Link to="about" smooth={true} offset={-160} duration={500}>
+            About
+          </Link>
+        </li>
 
+        <li>
+          <Link to="gallery" smooth={true} offset={-290} duration={500}>
+            Gallery
+          </Link>
+        </li>
 
+        <li>
+          <Link to="testimony" smooth={true} offset={-290} duration={500}>
+            Testimony
+          </Link>
+        </li>
 
+        <li>
+          <Link to="contact" smooth={true} offset={-250} duration={500}>
+            Contact
+          </Link>
+        </li>
+
+     
+
+        {username ? (
+          <>
+            <li className="welcome-text">
+              Welcome, <strong>{username}</strong>
+            </li>
+
+            <li>
+              <button className="btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <a href="/Uni-web/Signup.html">
+                <button className="btn">Sign Up</button>
+              </a>
+            </li>
+
+            <li>
+              <a href="/Uni-web/Login.html">
+                <button className="btn">Login</button>
+              </a>
+            </li>
+          </>
+        )}
       </ul>
-
-
     </nav>
+  );
+};
 
-
-  )
-}
-
-export default Navbar
+export default Navbar;
