@@ -19,3 +19,26 @@ padding-top: 20px;
 
 }
 
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column-reverse; /* Places main links above copyright on mobile */
+        gap: 15px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .footer ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer ul li {
+        margin: 5px 10px;
+        padding-top: 0;
+    }
+}
+

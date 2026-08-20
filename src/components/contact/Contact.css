@@ -98,3 +98,46 @@
     color: white;
 }
 
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        margin: 40px auto;
+        gap: 40px;
+    }
+
+    .contactcol {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .msg h3 {
+        font-size: 22px;
+    }
+
+    .msg img {
+        width: 28px;
+    }
+
+    .contactcol p {
+        max-width: 100%;
+        font-size: 14px;
+        margin: 15px 0;
+    }
+
+    .contactcol ul li {
+        margin: 15px 0;
+        font-size: 14px;
+    }
+
+    .btnn {
+        width: 100%;
+        justify-content: center;
+    }
+}

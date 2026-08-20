@@ -73,3 +73,52 @@
 .nb {
     right: 0;
 }
+
+
+
+
+
+@media (max-width: 768px) {
+    .testimony {
+        margin: 40px auto;
+        padding: 0 40px; /* Reduced outer padding for slider buttons */
+    }
+
+    .slider ul li {
+        padding: 10px 5px; /* Minimal padding on list items */
+    }
+
+    .slide {
+        padding: 20px 25px; /* Reduced internal card padding from 80px */
+        border-radius: 15px;
+        font-size: 14px;
+    }
+
+    .userinfo img {
+        width: 55px; /* Scaled down avatar size */
+        margin-right: 12px;
+        border-width: 3px;
+    }
+
+    .userinfo h3 {
+        font-size: 18px;
+    }
+
+    .userinfo span {
+        font-size: 13px;
+    }
+
+    .nb,
+    .fb {
+        width: 35px; /* Reduced navigation button size */
+        padding: 8px;
+    }
+
+    .fb {
+        left: 0;
+    }
+
+    .nb {
+        right: 0;
+    }
+}

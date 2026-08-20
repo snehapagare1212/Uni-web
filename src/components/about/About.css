@@ -46,3 +46,33 @@ font-size: 32px;
 
     font-size: 20px;
 }
+
+
+
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        margin: 50px auto;
+        gap: 30px;
+    }
+
+    .aboutL,
+    .aboutR {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .aboutR h3 {
+        font-size: 32px;
+    }
+
+    .aboutR h2 {
+        font-size: 22px;
+    }
+
+    .aboutR p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}

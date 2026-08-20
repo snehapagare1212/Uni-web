@@ -20,3 +20,27 @@
     border-radius:30px;
     margin-bottom: 10px;
 }
+
+
+
+
+@media (max-width: 768px) {
+    .campus {
+        margin: 50px auto;
+        width: 95%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        display: grid; /* Switched to Grid for clean 1 or 2 column auto-fitting */
+        gap: 15px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 300px; /* Reduced height for smaller mobile screens */
+        padding: 0;
+        border-radius: 20px;
+        margin-bottom: 0;
+    }
+}
