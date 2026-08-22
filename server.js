@@ -138,6 +138,14 @@ app.post("/login", async (req, res) => {
     }
 });
 
+
+app.get("/healthz", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Server is running"
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
