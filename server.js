@@ -115,6 +115,9 @@ app.post("/login", async (req, res) => {
         });
     }
 
+
+    
+
     try {
         const sql = "SELECT * FROM users WHERE email = ?";
 
