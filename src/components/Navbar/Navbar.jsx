@@ -6,34 +6,45 @@ import { Link } from 'react-scroll';
 const Navbar = () => {
   const [bg, setBg] = useState(false);
   const [username, setUsername] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setBg(window.scrollY > 500);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Check if user is logged in
-    const name = localStorage.getItem("username");
-    if (name) {
-      setUsername(name);
-    }
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("username");
-
-    setUsername("");
-
-    alert("Logged out successfully!");
-
-    window.location.href = "/Uni-web/Login.html";
+useEffect(() => {
+  const handleScroll = () => {
+    setBg(window.scrollY > 500);
   };
+
+  window.addEventListener("scroll", handleScroll);
+
+  const name =
+    localStorage.getItem("username") ||
+    sessionStorage.getItem("username");
+
+  if (name) {
+    setUsername(name);
+  }
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
+const handleLogout = async () => {
+  try {
+    await fetch("https://uni-web-22c9.onrender.com/logout", {
+      method: "POST",
+      credentials: "include"
+    });
+  } catch (error) {
+    console.error("Logout error:", error);
+  }
+
+  localStorage.removeItem("username");
+  sessionStorage.removeItem("username");
+
+  setUsername("");
+
+  alert("Logged out successfully!");
+
+  window.location.href = "/Uni-web/Login.html";
+};
 
   return (
     <nav className={`container ${bg ? "darknav" : ""}`}>
