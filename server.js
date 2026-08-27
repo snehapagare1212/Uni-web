@@ -337,12 +337,6 @@ app.post("/logout", (req, res) => {
 
 });
 
-app.get("/me", (req, res) => {
-    res.json({
-        success: true,
-        message: "ME ROUTE IS WORKING"
-    });
-});
 
 // ===============================
 // HEALTH CHECK
