@@ -66,12 +66,19 @@
 
                 if (data.success) {
 
-                    localStorage.setItem("username", data.user.name);
+                    if (rememberMe) {
+                        // Remember Me ON → survives browser restart
+                        localStorage.setItem("username", data.user.name);
+                            sessionStorage.removeItem("username");
+                    } else {
+                        // Remember Me OFF → only survives until browser/tab session ends
+                        sessionStorage.setItem("username", data.user.name);
+                        localStorage.removeItem("username");
+                    }
+
                     alert("✅ User has logged in successfully!");
 
-
                     window.location.href = "index.html";
-
                 } else {
                     alert("❌ " + data.message);
                 }
@@ -84,7 +91,7 @@
 
 
 
-        
+
     </script>
 
 </body>
